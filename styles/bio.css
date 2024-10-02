@@ -1,56 +1,65 @@
-.header {
-    background-color: #323232;
-    text-align: center;
-    padding: 1rem;
-  }
-  .header__nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .header__logo {
-    color: white;
-    font-size: 2rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    margin-bottom: 1rem;
-  }
-  .header__menu {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
+* {
+    margin: 0;
     padding: 0;
-  }
-  .header__link {
+}
+.header {
+  background-color: #323232;
+  text-align: center;
+  padding: 1rem;
+}
+.header__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header__logo {
+  color: white;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+.header__menu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+.header__link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.125rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+.bio__title{
+    background-image: url('../assets/images/hero-bio.jpg');
+    background-size: cover;
+    padding: 3rem 1rem;
     color: white;
-    text-decoration: none;
-    font-size: 1.125rem;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-  }
+}
 
-  /**testing**/
 
 @media (min-width: 768px) {
-    .header__nav {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-    .header__menu {
-      margin-left: auto;
-    }
-    .header__logo {
-      font-size: 2.5rem;
-    }
-    .header__link {
-      font-size: 1.25rem;
-    }
+  .header__nav {
+    flex-direction: row;
+    justify-content: space-between;
   }
-  @media (min-width: 1024px) {
-    .header__logo {
-      font-size: 3rem;
-    }
-    .header__link {
-      font-size: 1.5rem;
-    }
+  .header__menu {
+    margin-left: auto;
   }
+  .header__logo {
+    font-size: 2.5rem;
+  }
+  .header__link {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 1024px) {
+  .header__logo {
+    font-size: 3rem;
+  }
+  .header__link {
+    font-size: 1.5rem;
+  }
+}
