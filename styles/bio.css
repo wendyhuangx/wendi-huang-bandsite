@@ -2,10 +2,14 @@
     margin: 0;
     padding: 0;
 }
+html, body {
+    width: 100%;
+}
 .header {
   background-color: #323232;
   text-align: center;
   padding: 1rem;
+  width: 100%;
 }
 .header__nav {
   display: flex;
@@ -33,13 +37,61 @@
   border-radius: 5px;
 }
 .bio__title{
-    background-image: url('../assets/images/hero-bio.jpg');
-    background-size: cover;
-    padding: 3rem 1rem;
-    color: white;
+  font-size: 36px;
+  line-height: 44px;
+  margin-bottom: 1rem;
+  color: white;
 }
 
+.bio__content{
+    position: relative; /*relative to the parent class i.e. bio in this case */
+    width: 100%; /*specifies the div, not the components in it*/
+    max-width: none; /* always use 100%, no overrides */
+    margin: 0; 
+    z-index: 2;
+    padding: 6rem 1rem; /*inside of the boarders of the div, margin is inside e.g. screen*/
+    background-image: linear-gradient(rgba(50,50,50,0.5), rgba(50,50,50,0.5)), url('../assets/images/hero-bio.jpg'); /*make it transparent - 50s make it cancel each other out*/ 
+    background-size: cover; /* covers the whole space that div is in*/
+    background-repeat: no-repeat; /* the image can only be there once, that covers the whole thing ^ */
+    background-position: center; /* make sure the image is centered in the div */
+}
 
+.bio {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.bio__lower {
+    padding: 1rem;
+}
+.bio__lower img {
+    width: 100%;
+}
+/*.bio__text {
+
+}*/
+
+.gallery__images {
+  display: flex;
+  flex-direction: column;  
+  gap: 1rem;
+}
+
+.gallery__images img {
+    width: 100%;
+    height: auto;
+}
+
+.gallery {
+    padding: 3rem 1rem;
+    background-color: #FAFAFA;
+    width: 100%;
+}
+.gallery__title {
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 1rem;
+}
 @media (min-width: 768px) {
   .header__nav {
     flex-direction: row;
