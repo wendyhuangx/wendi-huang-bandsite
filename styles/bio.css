@@ -1,15 +1,46 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /*there was an overflow issue, this fixes it because the margins and paddings are included in div dimensions when we say width = 100%*/
 }
 html, body {
     width: 100%;
 }
+
+body {
+    font-family: 'Avenir Next', sans-serif; /* Fallback to sans-serif */
+    font-weight: 400; /* Regular weight */
+    line-height: 22px;
+    font-size: 14px;
+}
+
+h1, h2, p {
+    font-family: 'Avenir Next', sans-serif; /* Apply Avenir Next */
+    font-weight: 400; /* Ensure regular weight */
+}
+
+h1 {
+    font-size: 2em; /* Adjust size as needed */
+    padding: 0.7em; 
+    
+}
+
+h2 {
+    font-size: 1.5em; /* Adjust size as needed */
+}
+
+h3 {
+    padding: 0.7em;
+    font-weight: 500; 
+}
+p {
+    font-size: 1em; /* Adjust size as needed */
+}
+
 .header {
   background-color: #323232;
   text-align: center;
-  padding: 1rem;
-  width: 100%;
+  padding: 1rem 0 0 0;
 }
 .header__nav {
   display: flex;
@@ -24,10 +55,18 @@ html, body {
   margin-bottom: 1rem;
 }
 .header__menu {
-  display: flex;
-  gap: 1rem;
+  display: flex; 
   list-style: none;
   padding: 0;
+  width: 100%;
+  justify-content: center;
+  border-bottom: 2px solid transparent; /*transparent = gives positioning*/ 
+}
+
+.header__menu li { /*affecting all list items*/
+    flex: 1; /*it takes up half the space i.e. how many times it splits*/
+    margin: 0;
+
 }
 .header__link {
   color: white;
@@ -35,7 +74,20 @@ html, body {
   font-size: 1.125rem;
   padding: 0.5rem 1rem;
   border-radius: 5px;
+  position: relative;
+  display: block;
+
 }
+.header__link.active::after { /*after = could be used to add decorative effects, such as an icon or a line, after an active navigation link in a header. */
+    border-bottom: 2px solid white; /* White underline for active link */
+    content: '';
+    position: absolute;
+    width: 100%; /*when active this takes up 100% of the width which is 50% of the overall width*/ 
+    left: 0; /*positions it right against the side */ 
+    bottom: -0.125em;
+
+}
+
 .bio__title{
   font-size: 36px;
   line-height: 44px;
@@ -60,16 +112,31 @@ html, body {
     width: 100%;
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
 }
 .bio__lower {
     padding: 1rem;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 .bio__lower img {
-    width: 100%;
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    padding: 0.7rem;
 }
-/*.bio__text {
+.bio__text_a {
+    padding: 0.7em;
+    font-weight: 500;
 
-}*/
+}
+.bio__text_b {
+    padding: 0.7em; 
+    
+}
+
+.bio__vocalist {
+    padding: 0.7em;  
+}
 
 .gallery__images {
   display: flex;
@@ -86,16 +153,38 @@ html, body {
     padding: 3rem 1rem;
     background-color: #FAFAFA;
     width: 100%;
+
 }
 .gallery__title {
     font-size: 36px;
     line-height: 44px;
     margin-bottom: 1rem;
 }
+
+.footer {
+    background-color: #323232; /* Set the background color to black */
+    color: white; /* Optional: Set text color to white for contrast */
+    padding: 20px; /* Optional: Add some padding for spacing */
+    margin: 0;
+    align-items: center; /* Center items horizontally */
+    width: 100%;
+}
+
+.footer__title {
+    padding: 0;
+}
+
+.icons{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+
+}
 @media (min-width: 768px) {
   .header__nav {
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
   }
   .header__menu {
     margin-left: auto;
