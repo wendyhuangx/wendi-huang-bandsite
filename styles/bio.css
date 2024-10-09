@@ -5,6 +5,15 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Avenir Next';
+  src: url('../assets/font/AvenirNextLTPro-Bold.otf') format('otf'), /*know to put this in because in font folder ending is.otf*/
+       url('../assets/font/AvenirNextLTPro-Demi.otf') format('otf'),
+       url('../assets/font/AvenirNextLTPro-Regular.otf') format('otf');
+  font-weight: normal; /* or bold */
+  font-style: normal; /* or italic */
+}
+
 html {
   width: 100%;
 }
@@ -13,8 +22,8 @@ body {
   width: 100%;
   font-family: "Avenir Next", sans-serif;
   font-weight: 400;
-  line-height: 22px;
-  font-size: 14px;
+  line-height: 1.375em;
+  font-size: 0.875em;
 }
 
 h1 {
@@ -67,7 +76,7 @@ h3 {
   padding: 0;
   width: 100%;
   justify-content: center;
-  border-bottom: 2px solid transparent;
+  border-bottom: 0.125em solid transparent;
 }
 .header__menu li {
   flex: 1;
@@ -79,13 +88,13 @@ h3 {
   text-decoration: none;
   font-size: 1.125rem;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  border-radius: 0.3125em;
   position: relative;
   display: block;
 }
 
 .header__link.active::after {
-  border-bottom: 2px solid white;
+  border-bottom: 0.125em solid white;
   content: "";
   position: absolute;
   width: 100%;
@@ -94,8 +103,8 @@ h3 {
 }
 
 .bio__title {
-  font-size: 36px;
-  line-height: 44px;
+  font-size: 2.25em;
+  line-height: 2.75em;
   margin-bottom: 1rem;
   color: white;
   padding: 0;
@@ -132,12 +141,12 @@ h3 {
   padding: 0.7rem;
 }
 
-.bio__text_a {
+.bio__text--a {
   padding: 0.7em;
   font-weight: 500;
 }
 
-.bio__text_b {
+.bio__text--b {
   padding: 0.7em;
 }
 
@@ -162,15 +171,15 @@ h3 {
 }
 
 .gallery__title {
-  font-size: 36px;
-  line-height: 44px;
+  font-size: 2.25em;
+  line-height: 2.75em;
   margin-bottom: 1rem;
 }
 
 .footer {
   background-color: #323232;
   color: white;
-  padding: 20px;
+  padding: 1.25em;
   margin: 0;
   align-items: center;
   width: 100%;
@@ -187,6 +196,7 @@ h3 {
 
 .box_footer__title {
   margin-bottom: 2rem;
+  font-size: 2.25em;
 }
 
 .footer__bandsite {
@@ -257,22 +267,22 @@ h3 {
     padding-bottom: 2em;
   }
   h1 {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 2.25em;
+    line-height: 2.75em;
     font-weight: 500;
   }
-  .bio__text_b {
+  .bio__text--b {
     display: flex;
     justify-content: flex-start;
   }
   .box {
     width: 50%;
-    padding: 10px;
+    padding: 0.625em;
     box-sizing: border-box;
   }
-  .bio__text_a {
-    font-size: 24px;
-    line-height: 22px;
+  .bio__text--a {
+    font-size: 1.5em;
+    line-height: 1.375em;
     font-weight: 500;
     width: 100%;
   }
@@ -280,7 +290,7 @@ h3 {
     width: 80%;
   }
   .bio__vocalist {
-    font-size: 18px;
+    font-size: 1.125em;
     font-weight: 500;
   }
   .footer_info {
@@ -288,21 +298,21 @@ h3 {
     display: flex;
     justify-content: space-between;
   }
-  .footer__text_b {
+  .footer__text--b {
     width: 30%;
-    padding: 10px;
+    padding: 0.625em;
     box-sizing: border-box;
     flex: 1;
   }
-  .footer__text_a {
+  .footer__text--a {
     width: 30%;
-    padding: 10px;
+    padding: 0.625em;
     box-sizing: border-box;
     flex: 1;
   }
-  .footer__text_c {
+  .footer__text--c {
     width: 30%;
-    padding: 10px;
+    padding: 0.625em;
     box-sizing: border-box;
     flex: 1;
   }
@@ -329,16 +339,16 @@ h3 {
   }
   .footer__bandsite {
     margin-right: auto;
-    font-size: 22px;
+    font-size: 1.375em;
   }
   .bio__info {
     padding: 0 3em;
   }
   .bio__title {
-    font-size: 48px;
+    font-size: 3em;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .header__nav {
     flex-direction: row;
     justify-content: space-between;
@@ -384,27 +394,27 @@ h3 {
     padding-bottom: 2em;
   }
   h1 {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 2.25em;
+    line-height: 2.75em;
     font-weight: 500;
   }
-  .bio__text_b {
+  .bio__text--b {
     display: flex;
     justify-content: flex-start;
   }
   .box {
     width: 50%;
-    padding: 10px;
+    padding: 0.625em;
     box-sizing: border-box;
   }
-  .bio__text_a {
-    font-size: 24px;
-    line-height: 22px;
+  .bio__text--a {
+    font-size: 1.5em;
+    line-height: 1.375em;
     font-weight: 500;
     width: 58%;
   }
   .bio__vocalist {
-    font-size: 18px;
+    font-size: 1.125em;
     font-weight: 500;
   }
   .footer_info {
@@ -413,23 +423,25 @@ h3 {
   }
   .footer__text_b {
     width: 35%;
-    padding: 10px;
+    padding: 0.625em;
     box-sizing: border-box;
   }
   .footer__text_a {
     width: 35%;
-    padding: 10px;
+    padding: 0.625em;
     box-sizing: border-box;
   }
   .footer__text_c {
     width: 35%;
-    padding: 10px;
+    padding: 0.625em;
     box-sizing: border-box;
   }
   .footer__titleandicons {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    padding-bottom: 1em;
+    padding-top: 1em;
   }
   .box__icons {
     width: 30%;
@@ -449,13 +461,16 @@ h3 {
   }
   .footer__bandsite {
     margin-left: auto;
-    font-size: 22px;
+    font-size: 1.375em;
+  }
+  .footer__copyright{
+    padding: 1em 0em;
   }
   .bio__info {
     padding: 0 3em;
   }
   .bio__title {
-    font-size: 36px;
+    font-size: 2.25em;
   }
 }
 
