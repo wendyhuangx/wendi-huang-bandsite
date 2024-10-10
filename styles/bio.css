@@ -36,7 +36,7 @@ h1 {
 h2 {
   font-family: "Avenir Next", sans-serif;
   font-weight: 400;
-  font-size: 1.5em;
+  font-size: 2.5em;
 }
 
 p {
@@ -134,11 +134,13 @@ h3 {
   padding: 1rem;
   justify-content: center;
   align-items: center;
+  padding-top: 1em
 }
 .bio__lower img {
   max-width: 100%;
   height: auto;
   padding: 0.7rem;
+  padding-top: 1em
 }
 
 .bio__text--a {
@@ -174,6 +176,7 @@ h3 {
   font-size: 2.25em;
   line-height: 2.75em;
   margin-bottom: 1rem;
+  margin-top: 0rem;
 }
 
 .footer {
@@ -215,7 +218,61 @@ h3 {
   justify-content: space-between;
   width: 40%;
 }
+.bio__info{
+  padding-top: 2em;
+}
 
+form{
+  display: flex;
+  flex-direction: column;
+  padding-top: 1em;
+  gap: 0.5em;
+}
+form label{
+  color: rgba(50, 50, 50, 0.5);
+
+}
+form input, form textarea{
+  padding: 0.5em;
+  border: 1px solid rgba(50,50,50,0.5);
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  color: black;
+  border-radius: 0.5rem;
+
+}
+form button{
+  background-color: #323232;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+
+}
+.comments{
+  padding: 1rem;
+}
+.comment-profile{
+  flex: 0 0 20%;
+  display: flex;
+}
+.profile-image{
+  border-radius: 50%;
+  object-fit: cover;
+  width: 20%;
+}
+.input__container{
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  width: 100%;
+}
+.comment-fields{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
 @media (min-width: 768px) {
   .header__nav {
     flex-direction: row;
@@ -256,6 +313,7 @@ h3 {
   }
   .bio__lower {
     padding: 0em 5em;
+    padding-top: 1em
   }
   .bio__content {
     margin: 0;
@@ -299,19 +357,20 @@ h3 {
     justify-content: space-between;
   }
   .footer__text--b {
-    width: 30%;
-    padding: 0.625em;
+    width: 33%;
+    padding: 0.625em 0;
     box-sizing: border-box;
-    flex: 1;
+ 
   }
   .footer__text--a {
-    width: 30%;
+    width: 40%;
     padding: 0.625em;
     box-sizing: border-box;
-    flex: 1;
+    margin-right: 0;
+
   }
   .footer__text--c {
-    width: 30%;
+    width: 27%;
     padding: 0.625em;
     box-sizing: border-box;
     flex: 1;
@@ -342,7 +401,7 @@ h3 {
     font-size: 1.375em;
   }
   .bio__info {
-    padding: 0 3em;
+    padding: 3em 3em;
   }
   .bio__title {
     font-size: 3em;
@@ -383,6 +442,7 @@ h3 {
   }
   .bio__lower {
     padding: 0em 5em;
+    padding-top: 1em
   }
   .bio__content {
     margin: 0;
@@ -467,7 +527,8 @@ h3 {
     padding: 1em 0em;
   }
   .bio__info {
-    padding: 0 3em;
+    padding: 3em 3em;
+
   }
   .bio__title {
     font-size: 2.25em;
