@@ -247,6 +247,7 @@ form button{
   font-size: 1.5rem;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
+  width:100%
 
 }
 .comments{
@@ -357,7 +358,7 @@ form button{
     grid-template-columns: repeat(3, 1fr);
   }
   .gallery__title {
-    padding: 1.5em 0;
+    padding: 1.5em 0 0 0;
   }
   .bio__lower {
     padding: 0em 5em;
@@ -454,6 +455,21 @@ form button{
   .bio__title {
     font-size: 3em;
   }
+
+  .comments{
+    padding: 3rem 4rem 3rem 4rem;
+  }
+
+  form button{
+    width: 30%;
+  
+  }
+
+  .comment__button--container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
 }
 @media (min-width: 1280px) {
   .header__nav {
@@ -519,7 +535,7 @@ form button{
     font-size: 1.5em;
     line-height: 1.375em;
     font-weight: 500;
-    width: 58%;
+    width: 68%;
   }
   .bio__vocalist {
     font-size: 1.125em;
@@ -580,6 +596,22 @@ form button{
   }
   .bio__title {
     font-size: 2.25em;
+  }
+
+  .comments {
+    padding: 5rem 6rem 6rem 5rem;
+  }
+  #comments__container {
+   padding-left: 15rem;
+   padding-right: 15rem;
+  }
+  #comment-form {
+  padding-left: 15rem;
+   padding-right: 15rem;
+  }
+
+  .comment__button--container {
+    padding-top: 1em;
   }
 }
 

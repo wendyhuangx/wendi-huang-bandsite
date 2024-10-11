@@ -1,5 +1,25 @@
 document.addEventListener("DOMContentLoaded", function() {    
-    let comments = []; // Array to store comments
+    let comments = [
+        {
+            name:'Victor Pinto',
+            timestamp: '11/02/2023',
+            text:'This is Art',
+            profileImage:""
+        },
+        {
+            name:'Christina Cabrera',
+            timestamp: '10/28/2023',
+            text:'I feel blessed to have seen them in person!',
+            profileImage:""
+        },
+        {
+            name:'Issac Tadesse',
+            timestamp: '10/20/2023',
+            text:"I can't stop listening, everything I hear one of their songs I feel bessed",
+            profileImage:""
+            
+        }
+    ]; // Array to store comments
 
     function renderComment(comment){ 
         /*Create comment container */
