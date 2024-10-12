@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded",function(){
     //const showsContainer = document.getElementById('showsContainer');
     
     // Function to create show item
+
     
     function createShowItem(show) {
         const showsContainer = document.querySelector('.shows__grid');
@@ -59,8 +60,9 @@ document.addEventListener("DOMContentLoaded",function(){
             showsContainer.appendChild(showItem);
         
             showItem.addEventListener('click', () => {
-                const selectedItems = document.querySelectorAll('.show-item.selected');
-                selectedItems.forEach(item => item.classList.remove('selected'));
+                document.querySelectorAll('.show-item').forEach(item => {
+                    item.classList.remove('selected');
+                });
                 showItem.classList.add('selected');
             });
         });
