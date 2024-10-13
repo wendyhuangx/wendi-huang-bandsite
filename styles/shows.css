@@ -266,14 +266,14 @@
     border-bottom: 1px solid #ccc;
 
     &:hover {
-      background-color: #f9f9f9;
-      border-color: #888;
+      background-color: #FAFAFA;
+      border-color: #FAFAFA;
       cursor: pointer;
     }
     &.selected{
-      background-color: #323232;
+      background-color: #E1E1E1;
       color: white;
-      border-color: #444;
+      border-color: #E1E1E1;
     }
   }
   .show-label{
