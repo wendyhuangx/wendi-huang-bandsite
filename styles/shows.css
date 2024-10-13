@@ -102,60 +102,6 @@
     bottom: -0.125em;
   }
   
-  .bio__title {
-    font-size: 2.25em;
-    line-height: 2.75em;
-    margin-bottom: 1rem;
-    color: white;
-    padding: 0;
-  }
-  
-  .bio__content {
-    position: relative;
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    z-index: 2;
-    padding: 6rem 1rem;
-    background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/hero-bio.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  
-  .bio {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-  }
-  
-  .bio__lower {
-    padding: 1rem;
-    justify-content: center;
-    align-items: center;
-    padding-top: 1em
-  }
-  .bio__lower img {
-    max-width: 100%;
-    height: auto;
-    padding: 0.7rem;
-    padding-top: 1em
-  }
-  
-  .bio__text--a {
-    padding: 0.7em;
-    font-weight: 500;
-  }
-  
-  .bio__text--b {
-    padding: 0.7em;
-  }
-  
-  .bio__vocalist {
-    padding: 0.7em;
-  }
-  
   .gallery__images {
     display: flex;
     flex-direction: column;
@@ -218,9 +164,7 @@
     justify-content: space-between;
     width: 40%;
   }
-  .bio__info{
-    padding-top: 2em;
-  }
+
   
   .buy-tickets{
     background-color: #323232;
@@ -389,6 +333,8 @@
   }
   .show__headings{
     display: none;
+
+
   }
 
   @media (min-width: 768px) {
@@ -429,14 +375,6 @@
     .gallery__title {
       padding: 1.5em 0 0 0;
     }
-    .bio__lower {
-      padding: 0em 5em;
-      padding-top: 1em
-    }
-    .bio__content {
-      margin: 0;
-      padding: 10rem 5em;
-    }
     .footer {
       padding: 0em 5em;
       padding-top: 2em;
@@ -446,28 +384,7 @@
       font-size: 2.25em;
       line-height: 2.75em;
       font-weight: 500;
-    }
-    .bio__text--b {
-      display: flex;
-      justify-content: flex-start;
-    }
-    .box {
-      width: 50%;
-      padding: 0.625em;
-      box-sizing: border-box;
-    }
-    .bio__text--a {
-      font-size: 1.5em;
-      line-height: 1.375em;
-      font-weight: 500;
-      width: 100%;
-    }
-    .footer__left {
-      width: 80%;
-    }
-    .bio__vocalist {
-      font-size: 1.125em;
-      font-weight: 500;
+
     }
     .footer_info {
       flex-wrap: wrap;
@@ -517,12 +434,7 @@
     .footer__bandsite {
       margin-right: auto;
       font-size: 1.375em;
-    }
-    .bio__info {
-      padding: 3em 3em;
-    }
-    .bio__title {
-      font-size: 3em;
+    
     }
   
     .comments{
@@ -582,6 +494,26 @@
     .heading__date, .heading__venue, .heading__location{
       width: 20%;
     }
+    .song__spacing {
+      width: 60%;
+    }
+    .shows__title {
+      width: 120%;
+      font-size: 2.8rem;
+      font-weight: 4rem;
+      line-height: 1em;
+      padding-bottom: 2rem;
+    }
+    .show__right{
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    .show__title{
+      padding-left: 2.7rem;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      font-weight: bolder;
+    }
   }
   @media (min-width: 1280px) {
     .header__nav {
@@ -616,14 +548,6 @@
     .gallery__title {
       padding: 0em 2em;
     }
-    .bio__lower {
-      padding: 0em 5em;
-      padding-top: 1em
-    }
-    .bio__content {
-      margin: 0;
-      padding: 10rem 5em;
-    }
     .footer {
       padding: 0em 5em;
       padding-top: 2em;
@@ -634,28 +558,15 @@
       line-height: 2.75em;
       font-weight: 500;
     }
-    .bio__text--b {
-      display: flex;
-      justify-content: flex-start;
-    }
     .box {
       width: 50%;
       padding: 0.625em;
       box-sizing: border-box;
     }
-    .bio__text--a {
-      font-size: 1.5em;
-      line-height: 1.375em;
-      font-weight: 500;
-      width: 68%;
-    }
-    .bio__vocalist {
-      font-size: 1.125em;
-      font-weight: 500;
-    }
     .footer_info {
       display: flex;
       justify-content: space-between;
+      
     }
     .footer__text_b {
       width: 35%;
@@ -702,13 +613,6 @@
     .footer__copyright{
       padding: 1em 0em;
     }
-    .bio__info {
-      padding: 3em 3em;
-  
-    }
-    .bio__title {
-      font-size: 2.25em;
-    }
   
     .comments {
       padding: 5rem 6rem 6rem 5rem;
@@ -728,6 +632,10 @@
     .show__container{
       display: flex;
       gap:10rem;
+      padding-left: 5rem;
+      padding-top: 3rem;
+      padding-right: 4rem;
+      padding-bottom: 2rem;
       
     }
     .show__right{
@@ -735,11 +643,42 @@
     }
     .song__spacing{
       display: flex;
+      padding-left: 3em;
+      height: 20rem;
+      width: 90%;
     }
     .soundcloud-link{
       width: 70%;
     }
+
+    .show__headings{
+      padding-top: 2em;
+    
+    }
+
+    .shows__album {
+      font-size: 0.5em;      /* Set it back to the original size */
+      padding-left: 10.5em;    /* Adjust this value to move it slightly to the right */
+      padding-top: 5rem;
+        
+    }
+
+    .song__title {
+      font-size: 1.5em;   /* Adjust this value for the desired size */
+      width: 35%;         /* Set width to 60% */
+      margin: 0 auto;     /* Center the element if needed */
+      line-height: 2.4em;
+
+    }
+    .song img {
+      height: 1300px; /* Adjust this value as needed */
+    
+    }
+    .soundcloud-link {
+      margin-bottom: auto;
+    
+    }
+
   }
-  
   /*# sourceMappingURL=bio.css.map */
   

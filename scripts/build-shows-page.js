@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded",function(){
         
             const showButton = document.createElement('button');
             showButton.className = 'buy-tickets';
-            showButton.innerText = 'Buy Tickets';
+            showButton.innerText = 'BUY TICKETS';
 
             showItem.appendChild(dateLabel);
             showItem.appendChild(showDate);
