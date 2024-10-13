@@ -266,8 +266,8 @@
     border-bottom: 1px solid #ccc;
 
     &:hover {
-      background-color: #FAFAFA;
-      border-color: #FAFAFA;
+      background-color: #ccc;
+      border-color: #ccc;
       cursor: pointer;
     }
     &.selected{
