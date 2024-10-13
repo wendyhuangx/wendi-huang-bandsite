@@ -1,0 +1,391 @@
+/* Variables */
+$font-family: "Avenir Next", sans-serif;
+$background-color: #323232;
+$white: white;
+$gray: #FAFAFA;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: url('../assets/font/AvenirNextLTPro-Bold.otf') format('otf'),
+       url('../assets/font/AvenirNextLTPro-Demi.otf') format('otf'),
+       url('../assets/font/AvenirNextLTPro-Regular.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  width: 100%;
+  font-family: $font-family;
+  font-weight: 400;
+  line-height: 1.375em;
+  font-size: 0.875em;
+}
+
+h1 {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 2em;
+  padding: 0.7em;
+}
+
+h2 {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 2.5em;
+}
+
+p {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+h3 {
+  padding: 0.7em;
+  font-weight: 500;
+}
+
+.header {
+  background-color: $background-color;
+  text-align: center;
+  padding: 1rem 0;
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  &__logo {
+    color: $white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom: 1rem;
+
+    @media (min-width: 768px) {
+      font-size: 2rem;
+      margin: 0;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+    border-bottom: 0.125em solid transparent;
+
+    li {
+      flex: 1;
+      margin: 0;
+    }
+  }
+
+  &__link {
+    color: $white;
+    text-decoration: none;
+    font-size: 1.125rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3125em;
+    position: relative;
+    display: block;
+
+    &.active::after {
+      border-bottom: 0.125em solid $white;
+      content: "";
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: -0.125em;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 1.25rem;
+      display: inline-block;
+      padding: 0.5em 0;
+
+      &.active::after {
+        bottom: -0.85em;
+      }
+    }
+  }
+}
+
+.gallery {
+  padding: 3rem 1rem;
+  background-color: $gray;
+  width: 100%;
+
+  &__title {
+    font-size: 2.25em;
+    line-height: 2.75em;
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+  }
+
+  &__images {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    @media (min-width: 768px) {
+      gap: 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.footer {
+  background-color: $background-color;
+  color: $white;
+  padding: 1.25em;
+  margin: 0;
+  align-items: center;
+  width: 100%;
+
+  &__title {
+    padding: 0;
+  }
+
+  &__titleandicons {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+  }
+
+  &__bandsite {
+    padding: 0;
+  }
+
+  &__copyright {
+    padding-top: 1em;
+  }
+}
+
+.box_footer {
+  &__title {
+    margin-bottom: 2rem;
+    font-size: 2.25em;
+  }
+}
+
+.box__icons {
+  justify-content: space-evenly;
+  width: 30%;
+  gap: 3em;
+  display: flex;
+
+  @media (min-width: 768px) {
+    width: 30%;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+.buy-tickets {
+  background-color: $background-color;
+  color: $white;
+  font-size: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #444;
+  }
+
+  @media (min-width: 768px) {
+    width: 25%;
+  }
+}
+
+.comments {
+  padding: 1rem;
+
+  @media (min-width: 768px) {
+    padding: 3rem 4rem;
+  }
+}
+
+.comment-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1rem;
+
+  .profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.comment-content {
+  flex: 1;
+
+  .comment-name {
+    font-weight: bold;
+    font-size: 1rem;
+    color: black;
+  }
+
+  .comment-timestamp {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+  }
+
+  .comment-text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: black;
+  }
+}
+
+.show-item {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-bottom: 1px solid #ccc;
+
+  &:hover {
+    background-color: #ccc;
+    border-color: #ccc;
+    cursor: pointer;
+  }
+
+  &.selected {
+    background-color: $background-color;
+    color: $white;
+    border-color: #E1E1E1;
+  }
+
+  .show-label {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .show-date, .show-venue, .show-location {
+    flex: 1;
+    margin-bottom: 1rem;
+    text-align: left;
+
+    &.show-date {
+      font-weight: 500;
+    }
+  }
+
+  .show__title {
+    padding-left: 0.5em;
+    padding-top: 1em;
+    font-weight: bold;
+    font-size: 30px;
+  }
+}
+
+// Media Queries
+@media (min-width: 768px) {
+  .header {
+    padding: 1rem 5em;
+  }
+
+  .gallery {
+    padding: 0 4rem 3rem 4rem;
+
+    &__title {
+      padding: 1.5em 0 0 0;
+    }
+  }
+
+  .footer {
+    padding: 0em 5em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+
+  h1 {
+    font-size: 2.25em;
+    line-height: 2.75em;
+    font-weight: 500;
+  }
+
+  .footer_info {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer__text--b, .footer__text--a, .footer__text--c {
+    padding: 0.625em;
+    box-sizing: border-box;
+  }
+
+  .footer__text--b {
+    width: 33%;
+  }
+
+  .footer__text--a {
+    width: 40%;
+  }
+
+  .footer__text--c {
+    width: 27%;
+    flex: 1;
+  }
+
+  .footer__container {
+    display: flex;
+  }
+
+  .comments {
+    padding: 3rem 4rem 3rem 4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .header {
+    padding: 1rem 5em;
+  }
+
+  .footer {
+    padding: 0em 5em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+
+  h1 {
+    font-size: 2.25em;
+    line-height: 2.75em;
+    font-weight: 500;
+  }
+}
