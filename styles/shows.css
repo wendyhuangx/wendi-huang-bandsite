@@ -266,13 +266,13 @@
     border-bottom: 1px solid #ccc;
 
     &:hover {
-      background-color: #ccc;
-      border-color: #ccc;
+      background-color: #d7c4c4;
+      border-color: #d7c4c4;
       cursor: pointer;
     }
     &.selected{
       background-color: #E1E1E1;
-      color: white;
+      color: black;
       border-color: #E1E1E1;
     }
   }
