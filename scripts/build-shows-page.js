@@ -1,5 +1,4 @@
-// script.js
-document.addEventListener("DOMContentLoaded",function(){
+document.addEventListener("DOMContentLoaded", function() {
     const shows = [
         { date: 'Mon Sept 09 2024', venue: 'Ronald Lane', location: 'San Francisco, CA' },
         { date: 'Tue Sept 17 2024', venue: 'Pier 3 East', location: 'San Francisco, CA' },
@@ -7,23 +6,19 @@ document.addEventListener("DOMContentLoaded",function(){
         { date: 'Sat Nov 16 2024', venue: 'Hyatt Agency', location: 'San Francisco, CA' },
         { date: 'Fri Nov 29 2024', venue: 'Moscow Center', location: 'San Francisco, CA' },
         { date: 'Wed Dec 18 2024', venue: 'Press Club', location: 'San Francisco, CA' },
-    
     ];
-    
-    //const showsContainer = document.getElementById('showsContainer');
-    
-    // Function to create show item
 
-    
-    function createShowItem(show) {
+    // Function to create show items
+    function createShowItems() {
         const showsContainer = document.querySelector('.shows__grid');
-        shows.forEach((show) => {
+
+        shows.forEach(show => {
             const showItem = document.createElement('div');
             showItem.className = 'show-item';
 
             const dateLabel = document.createElement('p');
             dateLabel.className = 'show-label';
-            dateLabel.textContent='DATE';
+            dateLabel.textContent = 'DATE';
         
             const showDate = document.createElement('p');
             showDate.className = 'show-date';
@@ -31,7 +26,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
             const venueLabel = document.createElement('p');
             venueLabel.className = 'show-label';
-            venueLabel.textContent='VENUE';
+            venueLabel.textContent = 'VENUE';
         
             const showVenue = document.createElement('p');
             showVenue.className = 'show-venue';
@@ -39,7 +34,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
             const locationLabel = document.createElement('p');
             locationLabel.className = 'show-label';
-            locationLabel.textContent='LOCATION';
+            locationLabel.textContent = 'LOCATION';
         
             const showLocation = document.createElement('p');
             showLocation.className = 'show-location';
@@ -66,9 +61,7 @@ document.addEventListener("DOMContentLoaded",function(){
                 showItem.classList.add('selected');
             });
         });
-
-        
     }
-    createShowItem();
-    
+
+    createShowItems();
 });

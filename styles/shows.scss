@@ -271,17 +271,19 @@ h3 {
 }
 
 .show-item {
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  border-bottom: 1px solid #ccc;
-
-  &:hover {
-    background-color: #ccc;
-    border-color: #ccc;
-    cursor: pointer;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-bottom: 1px solid #ccc;
+  
+    &:hover {
+      background-color: #ccc; /* Change background on hover */
+      cursor: pointer; /* Change cursor to pointer */
+    
+    }
   }
+  
 
   &.selected {
     background-color: $background-color;
