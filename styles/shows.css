@@ -175,11 +175,12 @@
     width:100%;
     transition: background-color 0.3s ease;
 
-    .buy-tickets:hover{
-      background-color: #444;
-    }
-    
+  }
   
+  .show-item:hover{
+    background-color: E1E1E1; /* Hover background */
+    
+
   }
   .comments{
     padding: 1rem;
@@ -266,10 +267,6 @@
     flex-direction: column;
     border-bottom: 1px solid #ccc;
 
-    &:hover {
-      background-color: #d7c4c4;
-      border-color: #d7c4c4;
-      cursor: pointer;
     }
     &.selected{
       background-color: #E1E1E1;
@@ -472,10 +469,7 @@
       padding: 0.75rem 1.5rem;
       border-radius: 0.5rem;
       width:25%;
-      transition: background-color 0.3s ease;
-  
-      &:hover{
-        background-color: #444;
+      transition: background-color 0.3s ease;  
       }
     
     }
