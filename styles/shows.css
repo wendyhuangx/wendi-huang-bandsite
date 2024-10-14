@@ -308,6 +308,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    padding-top: 5rem;
   }
   .soundcloud-link{
     display: flex;
@@ -558,9 +559,11 @@
       padding: 0em 2em;
     }
     .footer {
-      padding: 0em 5em;
-      padding-top: 2em;
-      padding-bottom: 2em;
+      padding-top: 4em;
+      padding-bottom: 4em;
+      padding-left: 8em;
+      padding-right: 8em;
+
     }
     h1 {
       font-size: 2.25em;
@@ -577,20 +580,25 @@
       justify-content: space-between;
       
     }
-    .footer__text_b {
+    .footer__text--b {
+      width: 35%;
+      padding: 0.625em;
+      box-sizing: border-box;
+      padding-left: 3em;
+    }
+    .footer__text--a {
+      width: 25%;
+      padding: 0.625em;
+      box-sizing: border-box;
+    
+    }
+    .footer__text--c {
       width: 35%;
       padding: 0.625em;
       box-sizing: border-box;
     }
-    .footer__text_a {
-      width: 35%;
-      padding: 0.625em;
-      box-sizing: border-box;
-    }
-    .footer__text_c {
-      width: 35%;
-      padding: 0.625em;
-      box-sizing: border-box;
+    .footer__email--c {
+      padding-top: 1.2em;
     }
     .footer__titleandicons {
       display: flex;
