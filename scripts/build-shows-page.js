@@ -1,16 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const shows = [
-        { date: 'Mon Sept 09 2024', venue: 'Ronald Lane', location: 'San Francisco, CA' },
-        { date: 'Tue Sept 17 2024', venue: 'Pier 3 East', location: 'San Francisco, CA' },
-        { date: 'Sat Oct 12 2024', venue: 'View Lounge', location: 'San Francisco, CA' },
-        { date: 'Sat Nov 16 2024', venue: 'Hyatt Agency', location: 'San Francisco, CA' },
-        { date: 'Fri Nov 29 2024', venue: 'Moscow Center', location: 'San Francisco, CA' },
-        { date: 'Wed Dec 18 2024', venue: 'Press Club', location: 'San Francisco, CA' },
-    ];
+document.addEventListener("DOMContentLoaded", async () => {
+    const showsContainer = document.querySelector('.shows__grid');
 
     // Function to create show items
-    function createShowItems() {
-        const showsContainer = document.querySelector('.shows__grid');
+    function createShowItems(shows) {
+        showsContainer.innerHTML='';
 
         shows.forEach(show => {
             const showItem = document.createElement('div');
@@ -22,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
             const showDate = document.createElement('p');
             showDate.className = 'show-date';
-            showDate.textContent = show.date;
+            showDate.textContent = new Date(show.date).toLocaleDateString();
 
             const venueLabel = document.createElement('p');
             venueLabel.className = 'show-label';
@@ -30,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
             const showVenue = document.createElement('p');
             showVenue.className = 'show-venue';
-            showVenue.textContent = show.venue;
+            showVenue.textContent = show.place;
 
             const locationLabel = document.createElement('p');
             locationLabel.className = 'show-label';
@@ -53,15 +46,19 @@ document.addEventListener("DOMContentLoaded", function() {
             showItem.appendChild(showButton);
 
             showsContainer.appendChild(showItem);
-        
             showItem.addEventListener('click', () => {
                 document.querySelectorAll('.show-item').forEach(item => {
                     item.classList.remove('selected');
                 });
                 showItem.classList.add('selected');
             });
+            
         });
     }
+    async function loadShows(){
+        const shows = await api.getShows();
+        createShowItems(shows);
+    }
 
-    createShowItems();
+    loadShows();
 });

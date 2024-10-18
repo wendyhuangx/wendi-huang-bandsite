@@ -1,701 +1,698 @@
 /* method to get band up top right --> hide the bandsite | display = none and turn it on */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: url('../assets/font/AvenirNextLTPro-Bold.otf') format('otf'), /*know to put this in because in font folder ending is.otf*/
+       url('../assets/font/AvenirNextLTPro-Demi.otf') format('otf'),
+       url('../assets/font/AvenirNextLTPro-Regular.otf') format('otf');
+  font-weight: normal; /* or bold */
+  font-style: normal; /* or italic */
+}
+
+html {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 400;
+  line-height: 1.375em;
+  font-size: 0.875em;
+}
+
+h1 {
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 400;
+  font-size: 2em;
+  padding: 0.7em;
+}
+
+h2 {
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 400;
+  font-size: 2.5em;
+}
+
+p {
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+h3 {
+  padding: 0.7em;
+  font-weight: 500;
+}
+
+.header {
+  background-color: #323232;
+  text-align: center;
+  padding: 1rem 0 0 0;
+}
+
+.header__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header__logo {
+  color: white;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.header__menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  justify-content: center;
+  border-bottom: 0.125em solid transparent;
+}
+.header__menu li {
+  flex: 1;
+  margin: 0;
+}
+
+.header__link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.125rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3125em;
+  position: relative;
+  display: block;
+}
+
+.header__link.active::after {
+  border-bottom: 0.125em solid white;
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -0.125em;
+}
+
+.gallery__images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.gallery__images img {
+  width: 100%;
+  height: auto;
+}
+
+.gallery {
+  padding: 3rem 1rem;
+  background-color: #FAFAFA;
+  width: 100%;
+}
+
+.gallery__title {
+  font-size: 2.25em;
+  line-height: 2.75em;
+  margin-bottom: 1rem;
+  margin-top: 0rem;
+}
+
+.footer {
+  background-color: #323232;
+  color: white;
+  padding: 1.25em;
+  margin: 0;
+  align-items: center;
+  width: 100%;
+}
+
+.footer__title {
+  padding: 0;
+}
+
+.footer__titleandicons {
+  display: flex;
+  flex-direction: column;
+}
+
+.box_footer__title {
+  margin-bottom: 2rem;
+  font-size: 2.25em;
+}
+
+.footer__bandsite {
+  padding: 0;
+}
+
+.box__icons {
+  justify-content: space-evenly;
+  width: 30%;
+  gap: 3em;
+  display: flex;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+
+.buy-tickets{
+  background-color: #323232;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  width:100%;
+  transition: background-color 0.3s ease;
+
+}
+
+.show-item:hover{
+  background-color: #b1aaaa; /* Hover background */
+
+}
+.comments{
+  padding: 1rem;
+}
+.comment-profile{
+  flex: 0 0 20%;
+  display: flex;
+}
+.profile-image{
+  border-radius: 50%;
+  object-fit: cover;
+  width: 40px;
+  height:40px;
+}
+.input__container{
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.comment-box{
+  display:flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+.comment-box .profile-image{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.comment-content{
+  flex: 1;
+}
+
+.comment-name{
+  font-weight: bold;
+  font-size: 1rem;
+  color: black;
+}
+
+.comment-timestamp{
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+.comment-text{
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: black;
+}
+.comment-header{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.comment-fields{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap:0.5rem;
+}
+
+.footer__copyright{
+  padding-top: 1em;
+}
+
+.shows__grid{
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+}
+.show-item{
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-bottom: 1px solid #ccc;
+
   }
-  
-  @font-face {
-    font-family: 'Avenir Next';
-    src: url('../assets/font/AvenirNextLTPro-Bold.otf') format('otf'), /*know to put this in because in font folder ending is.otf*/
-         url('../assets/font/AvenirNextLTPro-Demi.otf') format('otf'),
-         url('../assets/font/AvenirNextLTPro-Regular.otf') format('otf');
-    font-weight: normal; /* or bold */
-    font-style: normal; /* or italic */
+  &:hover {
+    background-color: #d7c4c4;
+    border-color: #d7c4c4;
+    cursor: pointer;
   }
-  
-  html {
-    width: 100%;
-  }
-  
-  body {
-    width: 100%;
-    font-family: "Avenir Next", sans-serif;
-    font-weight: 400;
-    line-height: 1.375em;
-    font-size: 0.875em;
-  }
-  
-  h1 {
-    font-family: "Avenir Next", sans-serif;
-    font-weight: 400;
-    font-size: 2em;
-    padding: 0.7em;
-  }
-  
-  h2 {
-    font-family: "Avenir Next", sans-serif;
-    font-weight: 400;
-    font-size: 2.5em;
-  }
-  
-  p {
-    font-family: "Avenir Next", sans-serif;
-    font-weight: 400;
-    font-size: 1em;
-  }
-  
-  h3 {
-    padding: 0.7em;
-    font-weight: 500;
-  }
-  
-  .header {
-    background-color: #323232;
-    text-align: center;
-    padding: 1rem 0 0 0;
-  }
-  
-  .header__nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .header__logo {
-    color: white;
-    font-size: 2rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    margin-bottom: 1rem;
-  }
-  
-  .header__menu {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    width: 100%;
-    justify-content: center;
-    border-bottom: 0.125em solid transparent;
-  }
-  .header__menu li {
-    flex: 1;
-    margin: 0;
-  }
-  
-  .header__link {
-    color: white;
-    text-decoration: none;
-    font-size: 1.125rem;
-    padding: 0.5rem 1rem;
-    border-radius: 0.3125em;
-    position: relative;
-    display: block;
-  }
-  
-  .header__link.active::after {
-    border-bottom: 0.125em solid white;
-    content: "";
-    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: -0.125em;
-  }
-  
-  .gallery__images {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .gallery__images img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .gallery {
-    padding: 3rem 1rem;
-    background-color: #FAFAFA;
-    width: 100%;
-  }
-  
-  .gallery__title {
-    font-size: 2.25em;
-    line-height: 2.75em;
-    margin-bottom: 1rem;
-    margin-top: 0rem;
-  }
-  
-  .footer {
-    background-color: #323232;
-    color: white;
-    padding: 1.25em;
-    margin: 0;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .footer__title {
-    padding: 0;
-  }
-  
-  .footer__titleandicons {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .box_footer__title {
-    margin-bottom: 2rem;
-    font-size: 2.25em;
-  }
-  
-  .footer__bandsite {
-    padding: 0;
-  }
-  
-  .box__icons {
-    justify-content: space-evenly;
-    width: 30%;
-    gap: 3em;
-    display: flex;
-  }
-  
-  .icons {
-    display: flex;
-    justify-content: space-between;
-    width: 40%;
+  &.selected{
+    background-color: #E1E1E1;
+    color: black;
+    border-color: #E1E1E1;
   }
 
+.show-label{
+  color:#888;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+.show-date, .show-venue, .show-location{
+  flex: 1;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+.show-date{
+  font-weight: 500;
+}
+
+.show__title{
+  padding-left: .5em;
+  padding-top: 1em;
+  font-weight: bold;
+  font-size: 30px;
+}
+.song {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  z-index: 2;
+  padding: 3rem 1rem;
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/Photo-gallery-3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 5rem;
+}
+.soundcloud-link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shows__album {
+  font-size: 0.5625em;
+  color: white;
+  padding-left: 4em;
+
+}
+
+.song__title{
+  font-size: 0.8125rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  color: white;
+  padding-left: 1.875rem;
+  line-height: 1.875rem;
+  width: 80%;
+  font-weight: bolder;
+}
+.show__headings{
+  display: none;
+
+
+}
+
+@media (min-width: 768px) {
+  .header__nav {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .header__menu {
+    padding-left: 2em;
+    align-items: flex-start;
+    width: 45%;
+    margin-right: auto;
+  }
+  .header__logo {
+    font-size: 2rem;
+    margin: 0;
+  }
+  .header__link {
+    font-size: 1.25rem;
+    display: inline-block;
+    padding: 0.5em 0;
+  }
+  .header__link.active::after {
+    bottom: -0.85em;
+  }
+  .header {
+    padding: 1rem 5em;
+  }
+  .gallery {
+    padding: 0 4rem 3rem 4rem;
+  }
+  .gallery__images {
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .gallery__title {
+    padding: 1.5em 0 0 0;
+  }
+  .footer {
+    padding: 0em 5em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+  h1 {
+    font-size: 2.25em;
+    line-height: 2.75em;
+    font-weight: 500;
+
+  }
+  .footer_info {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer__text--b {
+    width: 33%;
+    padding: 0.625em 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+ 
+  }
+  .footer__text--a {
+    width: 40%;
+    padding: 0.625em;
+    box-sizing: border-box;
+    margin-right: 0;
+
+  }
+  .footer__text--c {
+    width: 27%;
+    padding: 0.625em;
+    box-sizing: border-box;
+    flex: 1;
+    padding-left: 1rem;
+  }
+  .footer__titleandicons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .box__icons {
+    width: 30%;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    gap: 0.5em;
+  }
+  .box_footer__title {
+    width: auto;
+    padding-right: 2rem;
+    box-sizing: border-box;
+    display: flex;
+  }
+  .footer__container {
+    display: flex;
+  }
+  .footer__bandsite {
+    margin-right: auto;
+    font-size: 1.375em;
   
+  }
+
+  .comments{
+    padding: 3rem 4rem 3rem 4rem;
+  }
+
+  form button{
+    width: 30%;
+  
+  }
+
+  .comment__button--container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  .show-item{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+    width:100%;
+  
+  }
   .buy-tickets{
     background-color: #323232;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
-    width:100%;
+    width:25%;
     transition: background-color 0.3s ease;
-
-  }
-  
-  .show-item:hover{
-    background-color: #b1aaaa; /* Hover background */
-
-  }
-  .comments{
-    padding: 1rem;
-  }
-  .comment-profile{
-    flex: 0 0 20%;
-    display: flex;
-  }
-  .profile-image{
-    border-radius: 50%;
-    object-fit: cover;
-    width: 40px;
-    height:40px;
-  }
-  .input__container{
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    width: 100%;
-  }
-  
-  .comment-box{
-    display:flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 1rem;
-  }
-  .comment-box .profile-image{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .comment-content{
-    flex: 1;
-  }
-  
-  .comment-name{
-    font-weight: bold;
-    font-size: 1rem;
-    color: black;
-  }
-  
-  .comment-timestamp{
-    font-size: 0.85rem;
-    color: #888;
-    margin-bottom: 0.5rem;
-  }
-  .comment-text{
-    font-size: 1rem;
-    line-height: 1.5rem;
-    color: black;
-  }
-  .comment-header{
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .comment-fields{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    gap:0.5rem;
-  }
-  
-  .footer__copyright{
-    padding-top: 1em;
   }
 
-  .shows__grid{
-    display: flex;
-    flex-direction: column;
-    gap: 0rem;
+  &:hover{
+      background-color: #444;
   }
-  .show-item{
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    border-bottom: 1px solid #ccc;
-
-    &:hover {
-      background-color: #d7c4c4;
-      border-color: #d7c4c4;
-      cursor: pointer;
-    }
-    &.selected{
-      background-color: #E1E1E1;
-      color: black;
-      border-color: #E1E1E1;
-    }
+  
   }
   .show-label{
+    display: none;
+  }
+  .show__headings{
+    display: flex;
+    justify-content: flex-start;
     color:#888;
+    margin: 0;
     font-size: 0.9rem;
     margin-bottom: 0.25rem;
-  }
-  .show-date, .show-venue, .show-location{
-    flex: 1;
-    margin-bottom: 1rem;
+    gap:5rem;
+    padding-left: 1rem;
+
     text-align: left;
+    width: 70%;
+
   }
-  .show-date{
+  .heading__date, .heading__venue, .heading__location{
+    width: 20%;
+  }
+  .song__spacing {
+    width: 60%;
+  }
+  .shows__title {
+    width: 120%;
+    font-size: 2.8rem;
     font-weight: 500;
+    line-height: 1em;
+    padding-bottom: 2rem;
   }
 
-  .show__title{
-    padding-left: .5em;
-    padding-top: 1em;
-    font-weight: bold;
-    font-size: 30px;
+  .show__right{
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
-  .song {
-    position: relative;
+  .show__title{
+    padding-left: 2.7rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    font-weight: bolder;
+  }
+
+@media (min-width: 1280px) {
+  .header__nav {
+    flex-direction: row;
+    justify-content: space-between;
     width: 100%;
-    max-width: none;
+  }
+  .header__logo {
+    font-size: 1.4rem;
     margin: 0;
-    z-index: 2;
-    padding: 3rem 1rem;
-    background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/Photo-gallery-3.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-top: 5rem;
+  }
+  .header__link {
+    font-size: 0.8rem;
+    display: inline-block;
+    padding: 0.5em 0;
+  }
+  .header__link.active::after {
+    bottom: -1.3em;
+  }
+  .header {
+    padding: 1rem 5em;
+  }
+  .header__menu {
+    padding-left: 2em;
+    align-items: flex-start;
+    width: 15%;
+    margin-right: auto;
+  }
+  .gallery__images {
+    padding: 1.5em 5em;
+  }
+  .gallery__title {
+    padding: 0em 2em;
+  }
+  .footer {
+    padding-top: 4em;
+    padding-bottom: 4em;
+    padding-left: 8em;
+    padding-right: 8em;
+
+  }
+  h1 {
+    font-size: 2.25em;
+    line-height: 2.75em;
+    font-weight: 500;
+  }
+  .box {
+    width: 50%;
+    padding: 0.625em;
+    box-sizing: border-box;
+  }
+  .footer_info {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  .footer__text--b {
+    width: 35%;
+    padding: 0.625em;
+    box-sizing: border-box;
+    padding-left: 3em;
+  }
+  .footer__text--a {
+    width: 25%;
+    padding: 0.625em;
+    box-sizing: border-box;
+  
+  }
+  .footer__text--c {
+    width: 35%;
+    padding: 0.625em;
+    box-sizing: border-box;
+  }
+  .footer__email--c {
+    padding-top: 1.2em;
+  }
+  .footer__titleandicons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-bottom: 1em;
+    padding-top: 1em;
+  }
+  .box__icons {
+    width: 30%;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    gap: 0.5em;
+  }
+  .box_footer__title {
+    width: auto;
+    padding-right: 2rem;
+    box-sizing: border-box;
+    display: flex;
+  }
+  .footer__container {
+    display: flex;
+  }
+  .footer__bandsite {
+    margin-left: auto;
+    font-size: 1.375em;
+  }
+  .footer__copyright{
+    padding: 1em 0em;
+  }
+
+  .comments {
+    padding: 5rem 6rem 6rem 5rem;
+  }
+  #comments__container {
+   padding-left: 15rem;
+   padding-right: 15rem;
+  }
+  #comment-form {
+  padding-left: 15rem;
+   padding-right: 15rem;
+  }
+
+  .comment__button--container {
+    padding-top: 1em;
+  }
+  .show__container{
+    display: flex;
+    gap:10rem;
+    padding-left: 5rem;
+    padding-top: 3rem;
+    padding-right: 4rem;
+    padding-bottom: 2rem;
+    
+  }
+  .show__right{
+    width:100%;
+  }
+  .song__spacing{
+    display: flex;
+    padding-left: 3em;
+    height: 20rem;
+    width: 90%;
   }
   .soundcloud-link{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 70%;
+  }
+
+  .show__headings{
+    padding-top: 2em;
+  
   }
 
   .shows__album {
-    font-size: 0.5625em;
-    color: white;
-    padding-left: 4em;
-
-  }
-  
-  .song__title{
-    font-size: 0.8125rem;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    color: white;
-    padding-left: 1.875rem;
-    line-height: 1.875rem;
-    width: 80%;
-    font-weight: bolder;
-  }
-  .show__headings{
-    display: none;
-
-
-  }
-
-  @media (min-width: 768px) {
-    .header__nav {
-      flex-direction: row;
-      justify-content: space-between;
-      width: 100%;
-    }
-    .header__menu {
-      padding-left: 2em;
-      align-items: flex-start;
-      width: 45%;
-      margin-right: auto;
-    }
-    .header__logo {
-      font-size: 2rem;
-      margin: 0;
-    }
-    .header__link {
-      font-size: 1.25rem;
-      display: inline-block;
-      padding: 0.5em 0;
-    }
-    .header__link.active::after {
-      bottom: -0.85em;
-    }
-    .header {
-      padding: 1rem 5em;
-    }
-    .gallery {
-      padding: 0 4rem 3rem 4rem;
-    }
-    .gallery__images {
-      gap: 2rem;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .gallery__title {
-      padding: 1.5em 0 0 0;
-    }
-    .footer {
-      padding: 0em 5em;
-      padding-top: 2em;
-      padding-bottom: 2em;
-    }
-    h1 {
-      font-size: 2.25em;
-      line-height: 2.75em;
-      font-weight: 500;
-
-    }
-    .footer_info {
-      flex-wrap: wrap;
-      display: flex;
-      justify-content: space-between;
-    }
-    .footer__text--b {
-      width: 33%;
-      padding: 0.625em 0;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-   
-    }
-    .footer__text--a {
-      width: 40%;
-      padding: 0.625em;
-      box-sizing: border-box;
-      margin-right: 0;
-  
-    }
-    .footer__text--c {
-      width: 27%;
-      padding: 0.625em;
-      box-sizing: border-box;
-      flex: 1;
-      padding-left: 1rem;
-    }
-    .footer__titleandicons {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-    }
-    .box__icons {
-      width: 30%;
-      padding: 0;
-      box-sizing: border-box;
-      display: flex;
-      gap: 0.5em;
-    }
-    .box_footer__title {
-      width: auto;
-      padding-right: 2rem;
-      box-sizing: border-box;
-      display: flex;
-    }
-    .footer__container {
-      display: flex;
-    }
-    .footer__bandsite {
-      margin-right: auto;
-      font-size: 1.375em;
-    
-    }
-  
-    .comments{
-      padding: 3rem 4rem 3rem 4rem;
-    }
-  
-    form button{
-      width: 30%;
-    
-    }
-  
-    .comment__button--container {
-      display: flex;
-      justify-content: flex-end;
-      width: 100%;
-    }
-    .show-item{
-      display: flex;
-      justify-content: space-between;
-      flex-direction: row;
-      border-bottom: 1px solid #ccc;
-      text-align: left;
-      width:100%;
-    
-    }
-    .buy-tickets{
-      background-color: #323232;
-      color: white;
-      font-size: 1rem;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.5rem;
-      width:25%;
-      transition: background-color 0.3s ease;
-  
-      &:hover{
-        background-color: #444;
-      }
-    
-    }
-    .show-label{
-      display: none;
-    }
-    .show__headings{
-      display: flex;
-      justify-content: flex-start;
-      color:#888;
-      margin: 0;
-      font-size: 0.9rem;
-      margin-bottom: 0.25rem;
-      gap:5rem;
-      padding-left: 1rem;
-
-      text-align: left;
-      width: 70%;
-
-    }
-    .heading__date, .heading__venue, .heading__location{
-      width: 20%;
-    }
-    .song__spacing {
-      width: 60%;
-    }
-    .shows__title {
-      width: 120%;
-      font-size: 2.8rem;
-      font-weight: 500;
-      line-height: 1em;
-      padding-bottom: 2rem;
-
-    .footer__email--b {
-      margin-top: auto; 
-    }
-  
-    }
-    .show__right{
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-    .show__title{
-      padding-left: 2.7rem;
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-      font-weight: bolder;
-    }
-  }
-  @media (min-width: 1280px) {
-    .header__nav {
-      flex-direction: row;
-      justify-content: space-between;
-      width: 100%;
-    }
-    .header__logo {
-      font-size: 1.4rem;
-      margin: 0;
-    }
-    .header__link {
-      font-size: 0.8rem;
-      display: inline-block;
-      padding: 0.5em 0;
-    }
-    .header__link.active::after {
-      bottom: -1.5em;
-    }
-    .header {
-      padding: 1rem 5em;
-    }
-    .header__menu {
-      padding-left: 2em;
-      align-items: flex-start;
-      width: 15%;
-      margin-right: auto;
-    }
-    .gallery__images {
-      padding: 1.5em 5em;
-    }
-    .gallery__title {
-      padding: 0em 2em;
-    }
-    .footer {
-      padding-top: 4em;
-      padding-bottom: 4em;
-      padding-left: 8em;
-      padding-right: 8em;
-
-    }
-    h1 {
-      font-size: 2.25em;
-      line-height: 2.75em;
-      font-weight: 500;
-    }
-    .box {
-      width: 50%;
-      padding: 0.625em;
-      box-sizing: border-box;
-    }
-    .footer_info {
-      display: flex;
-      justify-content: space-between;
+    font-size: 0.5em;      /* Set it back to the original size */
+    padding-left: 10.5em;    /* Adjust this value to move it slightly to the right */
+    padding-top: 5rem;
       
-    }
-    .footer__text--b {
-      width: 35%;
-      padding: 0.625em;
-      box-sizing: border-box;
-      padding-left: 3em;
-    }
-    .footer__text--a {
-      width: 25%;
-      padding: 0.625em;
-      box-sizing: border-box;
-    
-    }
-    .footer__text--c {
-      width: 35%;
-      padding: 0.625em;
-      box-sizing: border-box;
-    }
-    .footer__email--c {
-      padding-top: 1.2em;
-    }
-    .footer__titleandicons {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      padding-bottom: 1em;
-      padding-top: 1em;
-    }
-    .box__icons {
-      width: 30%;
-      padding: 0;
-      box-sizing: border-box;
-      display: flex;
-      gap: 0.5em;
-    }
-    .box_footer__title {
-      width: auto;
-      padding-right: 2rem;
-      box-sizing: border-box;
-      display: flex;
-    }
-    .footer__container {
-      display: flex;
-    }
-    .footer__bandsite {
-      margin-left: auto;
-      font-size: 1.375em;
-    }
-    .footer__copyright{
-      padding: 1em 0em;
-    }
-  
-    .comments {
-      padding: 5rem 6rem 6rem 5rem;
-    }
-    #comments__container {
-     padding-left: 15rem;
-     padding-right: 15rem;
-    }
-    #comment-form {
-    padding-left: 15rem;
-     padding-right: 15rem;
-    }
-  
-    .comment__button--container {
-      padding-top: 1em;
-    }
-    .show__container{
-      display: flex;
-      gap:10rem;
-      padding-left: 5rem;
-      padding-top: 3rem;
-      padding-right: 4rem;
-      padding-bottom: 2rem;
-      
-    }
-    .show__right{
-      width:100%;
-    }
-    .song__spacing{
-      display: flex;
-      padding-left: 3em;
-      height: 20rem;
-      width: 90%;
-    }
-    .soundcloud-link{
-      width: 70%;
-    }
+  }
 
-    .show__headings{
-      padding-top: 2em;
-    
-    }
-
-    .shows__album {
-      font-size: 0.5em;      /* Set it back to the original size */
-      padding-left: 10.5em;    /* Adjust this value to move it slightly to the right */
-      padding-top: 5rem;
-        
-    }
-
-    .song__title {
-      font-size: 1.5em;   /* Adjust this value for the desired size */
-      width: 35%;         /* Set width to 60% */
-      margin: 0 auto;     /* Center the element if needed */
-      line-height: 2.4em;
-
-    }
-    .song img {
-      height: 1300px; /* Adjust this value as needed */
-    
-    }
-    .soundcloud-link {
-      margin-bottom: auto;
-    
-    }
+  .song__title {
+    font-size: 1.5em;   /* Adjust this value for the desired size */
+    width: 35%;         /* Set width to 60% */
+    margin: 0 auto;     /* Center the element if needed */
+    line-height: 2.4em;
 
   }
-  /*# sourceMappingURL=bio.css.map */
+  .song img {
+    height: 1300px; /* Adjust this value as needed */
   
+  }
+  .soundcloud-link {
+    margin-bottom: auto;
+  
+  }
+
+}
+/*# sourceMappingURL=bio.css.map */
