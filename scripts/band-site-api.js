@@ -1,9 +1,8 @@
 class BandSiteApi {
     constructor(apiKey) {
         this.apiKey = apiKey;
-        this.baseUrl = 'https://unit-2-project-api-25c1595833b2.herokuapp.com/';
+        this.baseUrl = 'https://unit-2-project-api-25c1595833b2.herokuapp.com';
         this.headers = {
-            'Authorization': `Bearer ${this.apiKey}`,
             'Content-Type': 'application/json',
         };
     }
@@ -11,7 +10,7 @@ class BandSiteApi {
     //Asynchronous method to post a comment
     async postComment(commentObj){
         try{
-            const response = await axios.post(`${this.baseUrl}/comments`, commentObj, {
+            const response = await axios.post(`${this.baseUrl}/comments?api_key=${this.apiKey}`, commentObj, {
                 headers:this.headers
             });
 
@@ -22,7 +21,7 @@ class BandSiteApi {
 
     async getComments(){
         try{
-            const response = await axios.get(`${this.baseUrl}/comments`,{
+            const response = await axios.get(`${this.baseUrl}/comments?api_key=${this.apiKey}`,{
                 headers:this.headers
             });
             const comments = response.data;
@@ -35,7 +34,7 @@ class BandSiteApi {
 
     async getShows(){
         try{
-            const response= await axios.get(`${this.baseUrl}/shows`, {
+            const response= await axios.get(`${this.baseUrl}/shows?api_key=${this.apiKey}`, {
                 headers:this.headers
             });
             return response.data;
@@ -44,4 +43,5 @@ class BandSiteApi {
         }
     }
 }
-const api = new BandSiteApi('98b12e9f-9a99-4479-864a-d50f2fc9a7dc');
+const apiKey='98b12e9f-9a99-4479-864a-d50f2fc9a7dc';
+const api = new BandSiteApi(apiKey);
