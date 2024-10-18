@@ -1,13 +1,5 @@
-$color_1: white;
-$color_2: rgba(50, 50, 50, 0.5);
-$color_3: black;
-$color_4: #888;
-$font-family_1: "Avenir Next", sans-serif;
-$background-color_1: #323232;
-$background-color_2: #FAFAFA;
-$background-color_3: #f9f9f9;
+@import 'partials/colors';
 
-/* method to get band up top right --> hide the bandsite | display = none and turn it on */
 @font-face {
 	font-family: 'Avenir Next';
 /*know to put this in because in font folder ending is.otf*/
