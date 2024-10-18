@@ -487,7 +487,7 @@ form button{
     padding: 0.5em 0;
   }
   .header__link.active::after {
-    bottom: -1.5em;
+    bottom: -1.3em;
   }
   .header {
     padding: 1rem 5em;
